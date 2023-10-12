@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="bg-text">
+
+    <h2>Registration Form</h2>
+    <form id="registrationForm" action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="nameError"></span><br><br>
+        <label > DOB</label>
+        <input type="date" name="" id=""><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span class="error" id="emailError"></span><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span class="error" id="passwordError"></span><br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span class="error" id="confirmPasswordError"></span><br><br>
+
+        <div class="reg"><br>
+        <button value="Register">Register</button>
+        </div>
+    </form>
+    </div>
+<style>
+  
+ body,html{
+
+    height: 100%;
+    display: block;
+ } 
+  *{
+    box-sizing: border-box;
+  }
+ .bg-image{
+        background-image: url(products-online.jpg);
+        
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+   
+
+ }
+ .bg-text{
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+
+ }
+ h2{
+        font-size: 3em;
+       margin-top: 10px;
+       display: inline-block;
+       color: rgb(220, 220, 29);
+    }
+ label{
+        padding-left: 2.5em;
+       display: inline-block;
+        position:absolute;
+        font-size: 1.5em;
+        width: 200px;
+        margin-right: 10x;
+        color: rgba(252, 252, 252, 0.775);
+ }
+ input{
+        height: 2em;
+        width: 300px;
+        margin-left: 17em;
+        background-color: rgba(136, 132, 132, 0.505);
+        color: white;
+ }
+ button{
+        font-size: 1.2em;
+        margin-right:12em;
+        border-radius: 10px;
+        background-color: rgba(96, 96, 244, 0.273);
+        color: white;
+
+        
+       
+    }
+    button:hover{
+        background-color: rgb(87, 130, 176);
+    }
+    button:active{
+        background-color: rgba(0, 140, 93, 0.552);
+    }
+   
+    
+    input,label{
+        
+        display:block;
+        justify-content: center;
+    }
+    form{
+        margin-left: 15em;
+    }
+</style>
+    <script>
+        const registrationForm = document.getElementById("registrationForm");
+
+        registrationForm.addEventListener("submit", function (e) {
+            let isValid = true;
+
+           
+            const name = document.getElementById("name").value.trim();
+            const nameError = document.getElementById("nameError");
+            if (name === "") {
+                nameError.textContent = "Name is required";
+                isValid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+           
+            const email = document.getElementById("email").value.trim();
+            const emailError = document.getElementById("emailError");
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = "Invalid email address";
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const passwordError = document.getElementById("passwordError");
+            const confirmPasswordError = document.getElementById("confirmPasswordError");
+
+            if (password === "") {
+                passwordError.textContent = "Password is required";
+                isValid = false;
+            } else if (password.length < 8) {
+                passwordError.textContent = "Password must be at least 8 characters long";
+                isValid = false;
+            } else {
+                passwordError.textContent = "";
+            }
+
+            if (confirmPassword === "") {
+                confirmPasswordError.textContent = "Confirm Password is required";
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                confirmPasswordError.textContent = "Passwords do not match";
+                isValid = false;
+            } else {
+                confirmPasswordError.textContent = "";
+            }
+
+            if (!isValid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+  
+
+</body>
+</html>

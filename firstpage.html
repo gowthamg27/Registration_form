@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Shopping</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header >
+        <a href="" id="logo"><h1>My Online Shopping </h1></a>
+        
+        <nav>
+            <a href="#">
+                <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form></a>
+            <a href="#">Pricing</a>
+               <a href="register.html">Sign in</a>
+                <a href="#">Login in</a>
+
+            
+        </nav>
+    </header>
+<br>
+
+    <section class="product list">
+        <div class="list1">
+            <img src="laptop.jpg"width="500px"; height="400px";>
+            <h2>Apple Laptop</h2>
+            <p>Price: $2104.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="list2">
+            <img src="iphone.jpg" width="500px"; height="400px";>
+            <h2>iPhone 13</h2>
+            <p>Price: $964.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+       
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Shopping Website</p>
+    </footer>
+    <style>
+        body{
+            border-left: 1px  solid black;
+            border-right: 1px  solid black;
+        }
+        header a{
+            color: azure;
+            text-decoration: none;
+        
+            min-width: 120px;
+            font-size: 1.25em;
+        
+            margin-right: 1em;}
+        header{
+            display: flex;
+            padding: 1em;
+            flex-wrap: wrap;
+            row-gap: 1em;
+            background-color: black;
+           
+             }
+      #logo{
+           flex: 4;
+            }
+        nav{
+            flex:5;
+            display: flex;
+            align-items: center;
+           }
+        nav a{
+            flex: 1;
+           }
+        nav a:hover{
+             color: #eadb8f;
+           }
+       input{
+            width: 120px;
+           }
+       .product-list {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+          }
+
+        .list1{
+            left: 0;
+            padding-left: 2em;
+            
+           }
+
+         .list2{
+            right: 0;
+            height: 100%;
+            position:fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            margin-top: 10em;
+            margin-right: 11em;
+            
+            }
+        .product-list h2,p{
+                padding-left: 150px;
+                height: 1.5em;
+            }
+        .list1  h2 {
+                margin-left: 130px;   
+            }
+        .list2  h2 {
+                margin-left: 170px;
+            }
+            .list2 p{
+                padding-left: 180px;
+            }
+
+        .list1 button{
+                margin-left: 150px;
+            }
+        .list2 button{
+                margin-left: 180px;
+            }
+        footer{
+            
+                background-color: black;
+                color: white;
+            
+            }
+
+
+    </style>
+</body>
+</html>
